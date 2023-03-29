@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="title">
+            <h1>Nhập số</h1>
+            <input id="nhap" class="form-control w-100 fs-3" />
+            <div class="my-2 alert alert-primary fs-4" id="mom">
+
+            </div>
+            <button class="btn btn-success fs-3" id="btnThem">Thêm số vào mảng</button>
+        </div>
+        <div class="content mt-2">
+            <div class="tab">
+                <button class="tablinks   active" onclick="openTab(event, 'bai-1')" id="defaultOpen">Tổng số
+                    dương</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-2')">Đếm số dương</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-3')">Tìm số nhỏ nhất</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-4')">Tìm số dương nhỏ nhất</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-5')">Tìm số chẵn cuối cùng</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-6')">Đổi chỗ</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-7')">Sắp xếp tăng dần</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-8')">Tìm số nguyên tố đầu tiên</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-9')">Đếm số nguyên</button>
+                <button class="tablinks  " onclick="openTab(event, 'bai-10')">So sánh số lượng số âm và số
+                    dương</button>
+
+            </div>
+            <div class="noi-dung">
+                <div id="bai-1" class="tabcontent" style="display: block;">
+
+                    <!--tinh tong so duong-->
+                    <button class="btn btn-primary my-2" id="btnTinhTong">Tính tổng các số dương</button>
+                    <div class="alert alert-success " id="b1">
+
+                    </div>
+
+
+                </div>
+
+                <div id="bai-2" class="tabcontent" style="display: none;">
+                    <!--dem so duong-->
+                    <button class="btn btn-primary my-2" id="btnDemSoDuong">Đếm các số dương</button>
+                    <div class="alert alert-success" id="b2">
+
+                    </div>
+
+                </div>
+
+                <div id="bai-3" class="tabcontent" style="display: none;">
+                    <!--tim so nho nhat-->
+
+                    <button class="btn btn-primary my-2" id="btnTimMin">Tìm số nhỏ nhất</button>
+                    <div class="alert alert-success" id="b3">
+
+                    </div>
+
+                </div>
+
+                <div id="bai-4" class="tabcontent" style="display: none;">
+                    <!--tim so duong nho nhat-->
+
+                    <button id="btnMinDuong" class="btn btn-primary text-white">Số dương nhỏ nhất trong
+                        mảng</button>
+                    <div id="ket-qua-b4" class="p-3 border my-3 rounded bg-success text-white"></div>
+                    <hr>
+
+                </div>
+
+                <div id="bai-5" class="tabcontent" style="display: none;">
+                    <!--tìm số chẵn cuối cùng trong mảng-->
+                    <button class="btn btn-primary my-2" id="btnTimSoChanCuoi">Tìm số chẵn cuối cùng</button>
+
+                    <div class="alert alert-success" id="b5">
+
+                    </div>
+
+                </div>
+
+                <div id="bai-6" class="tabcontent" style="display: none;">
+                    <div class="row">
+                        <div class="col-6 form-group">
+
+                            <input type="tSxt" class="form-control" id="p1" placeholder="Nhập số vị trí 1">
+                        </div>
+
+                        <div class="col-6 form-group">
+
+                            <input type="text" class="form-control" id="p2" placeholder="Nhập số vị trí 2">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary my-2" id="btnDoiCho">Đổi chỗ</button>
+
+                    <div class="alert alert-success" id="b6">
+
+                    </div>
+
+
+
+                </div>
+
+                <div id="bai-7" class="tabcontent" style="display: none;">
+                    <!--sắp xếp mảng theo thứ tự tăng dần-->
+
+
+                    <button id="btnSapXep" class="btn btn-primary text-white">Sắp xếp mảng theo thứ tự tăng
+                        dần</button>
+                    <div id="ket-qua-b7" class="p-3 border my-3 rounded bg-success text-white"></div>
+
+
+                </div>
+
+                <div id="bai-8" class="tabcontent" style="display: none;">
+                    <!-- tìm số nguyên tố đầu tiên trong mảng -->
+
+                    <button class="btn btn-primary my-2" id="btnTimSoNguyen">Tìm số nguyên tố đầu tiên</button>
+
+                    <div class="alert alert-success" id="b8">
+
+                    </div>
+
+
+
+
+                </div>
+
+                <div id="bai-9" class="tabcontent" style="display: none;">
+                    <!--đếm số nguyên-->
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="nhap-so-random" placeholder="Nhập số nguyên">
+                        </div>
+
+                        <button class="btn btn-primary d-inline-block col-6 " id="btnThemSoRandom">Thêm số nguyên
+                            vào
+                            mảng</button>
+                        <div class="alert alert-success" id="array"></div>
+                    </div>
+
+                    <button class="btn btn-primary my-2" id="btnDemSoNguyen">Đếm số nguyên</button>
+
+                    <div class="alert alert-success" id="b9"></div>
+
+                </div>
+
+
+                <div id="bai-10" class="tabcontent" style="display: none;">
+
+                    <!--so sánh số lượng số âm và số dương-->
+                    <button class="btn btn-primary my-2" id="btnSoSanh">So sánh</button>
+                    <div class="alert alert-success" id="b10"></div>
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
